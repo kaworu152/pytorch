@@ -19,3 +19,7 @@ __pycache__/
 *.log
 .DS_Store
 __MACOSX/
+
+# Obsidian（workspace 频繁变动，不同步可避免两台电脑冲突）
+**/.obsidian/workspace.json
+**/.obsidian/workspace-mobile.json

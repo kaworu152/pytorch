@@ -1,0 +1,21 @@
+# 环境，绝不进 git
+miniconda/
+.venv/
+venv/
+
+# Python 缓存
+__pycache__/
+*.pyc
+*.pyo
+
+# Jupyter 缓存
+.ipynb_checkpoints/
+
+# 编辑器
+.idea/
+.vscode/
+
+# 其他
+*.log
+.DS_Store
+__MACOSX/

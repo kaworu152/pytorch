@@ -8,13 +8,21 @@ param(
 Set-Location $PSScriptRoot
 
 git add .
-
 $changes = git status --porcelain
 if ($changes) {
     git commit -m $msg
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "提交失败" -ForegroundColor Red
+        exit 1
+    }
+    Write-Host "已提交：$msg" -ForegroundColor Cyan
 } else {
-    Write-Host "没有改动，跳过提交" -ForegroundColor Yellow
+    Write-Host "没有新的改动" -ForegroundColor Yellow
 }
 
 git push
-Write-Host "同步完成" -ForegroundColor Green
+if ($LASTEXITCODE -eq 0) {
+    Write-Host "同步完成" -ForegroundColor Green
+} else {
+    Write-Host "推送失败：网络连接被重置，稍后重试（多试几次通常能成）" -ForegroundColor Red
+}

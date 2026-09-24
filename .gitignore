@@ -23,3 +23,9 @@ __MACOSX/
 # Obsidian（workspace 频繁变动，不同步可避免两台电脑冲突）
 **/.obsidian/workspace.json
 **/.obsidian/workspace-mobile.json
+
+# 数据集与大文件（运行代码会自动重新下载，不进 git）
+california-house-prices/
+data/
+*.pt
+*.pth
